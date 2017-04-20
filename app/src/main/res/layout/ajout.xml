@@ -11,24 +11,43 @@
         android:layout_height="wrap_content"
         android:text="@string/new_entry" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/date_entry"
+        style="@style/commun"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+<!--
         <TextView
             style="@style/commun"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/date_entry" />
+            android:text="@string/date_entry" />-->
 
         <DatePicker
             android:id="@+id/date_entry"
             android:layout_width="0sp"
-            android:layout_height="100dp"
-            android:layout_weight="1" />
-    </LinearLayout>
+            android:layout_height="100sp"
+            android:layout_weight="3"
+            android:datePickerMode="spinner"
+            android:spinnersShown="true"
+            android:calendarViewShown="false"/>
 
+        <TimePicker
+            android:id="@+id/hour_entry"
+            android:layout_width="0sp"
+            android:layout_height="100sp"
+            android:layout_weight="2"
+            android:timePickerMode="spinner" />
+
+
+    </LinearLayout>
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -46,11 +65,12 @@
             android:layout_height="100sp"
             android:layout_weight="1" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             style="@style/commun"
@@ -59,11 +79,12 @@
             android:layout_weight="1"
             android:text="@string/time_entry" />
 
-        <TimePicker
+        <EditText
             android:id="@+id/time_entry"
             android:layout_width="0sp"
-            android:layout_height="100sp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal"/>
     </LinearLayout>
 
     <Button
