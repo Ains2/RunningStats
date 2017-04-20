@@ -18,7 +18,7 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE sprint(id INTEGER PRIMARY KEY, distance INTEGER, temps FLOAT, date DATETIME, compet BOOLEAN, nom TEXT, classement INTEGER)");
+        db.execSQL("CREATE TABLE sprint(id INTEGER PRIMARY KEY, distance INTEGER, temps DOUBLE, date DATETIME, compet BOOLEAN, nom TEXT, classement INTEGER)");
     }
 
     @Override
@@ -26,7 +26,7 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     }
 
-    public void insertSprint(int dist, float tmp, Date date, boolean compet, String nom, int classement){
+    public void insertSprint(int dist, double tmp, Date date, boolean compet, String nom, int classement){
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("INSERT INTO sprint(distance, temps, date, compet, nom, classement) VALUES (?,?)",
                 new Object[]{dist, tmp, date, compet, nom, classement});
