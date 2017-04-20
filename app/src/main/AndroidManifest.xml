@@ -19,13 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ActiviteAjout"
-            android:label="Enregsitrement">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".ActiviteAjout"
+            android:label="Enregsitrement" />
 
         <activity android:name=".ActiviteParam"
             android:label="Parametres"/>

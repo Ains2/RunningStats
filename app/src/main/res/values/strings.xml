@@ -13,5 +13,8 @@
     <string name="time_entry">Temps : </string>
     <string name="ranking_entry">Classement : </string>
     <string name="save">Enregister</string>
+    <string name="length_entry">Distance :</string>
+    <string name="length_unit">m</string>
+    <string name="time_unit">s</string>
     <!-- Activité Historique -->
 </resources>
