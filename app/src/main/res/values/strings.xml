@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">Running Stats</string>
     <!-- Activité Accueil -->
-
+    <string name="last_run">Dernière course : </string>
+    <string name="add_entry">Ajouter Entrée</string>
+    <string name="see_histo">Voir historique</string>
     <!-- Activité Ajout -->
-    <string name="ajout_title">Ajouter une course</string>
-    <string name="ajout_dist">Distance</string>
-
+    <string name="new_entry">Nouvelle entrée</string>
+    <string name="date_entry">Date : </string>
+    <string name="hour_entry"> Heure : </string>
+    <string name="name_entry"> Nom : </string>
+    <string name="distance_entry"> Distance : </string>
+    <string name="time_entry">Temps : </string>
+    <string name="ranking_entry">Classement : </string>
+    <string name="save">Enregister</string>
     <!-- Activité Historique -->
 </resources>
