@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">Running Stats</string>
+    <!-- Labels -->
+    <string name="label_new_entry">Ajouter une entrée</string>
+    <string name="label_histo">Historique de vos performances</string>
+    <string name="label_stats">Statitiques détaillées</string>
+    <string name="label_settings">Paramètres de RunningStats</string>
+    <!-- Menu -->
+    <string name="menu_home">Accueil</string>
+    <string name="menu_new_entry">Ajouter une entrée</string>
+    <string name="menu_histo">Historique de vos performances</string>
+    <string name="menu_stats">Statitiques détaillées</string>
+    <string name="menu_settings">Paramètres de RunningStats</string>
+
+
     <!-- Activité Accueil -->
     <string name="last_run">Dernière course : </string>
     <string name="add_entry">Ajouter Entrée</string>

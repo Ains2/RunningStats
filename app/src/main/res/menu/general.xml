@@ -9,22 +9,22 @@
 
             <item
                 android:id="@+id/menu_accueil"
-                android:title="Accueil"
+                android:title="@string/menu_home"
                 />
             <item
                 android:id="@+id/menu_enregistrer"
-                android:title="Ajouter entrée"
+                android:title="@string/menu_new_entry"
                 />
             <item
                 android:id="@+id/menu_historique"
-                android:title="Historique"/>
+                android:title="@string/menu_histo"/>
             <item
                 android:id="@+id/menu_statistiques"
-                android:title="Statistiques"
+                android:title="@string/menu_stats"
                 />
             <item
                 android:id="@+id/menu_parametres"
-                android:title="Paramètres"
+                android:title="@string/menu_settings"
                 />
 
         </menu>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Running Stats</string>
+
+    <!-- Labels -->
+    <string name="label_new_entry">Add a new entry</string>
+    <string name="label_histo">History of your performances</string>
+    <string name="label_stats">Detailed statistics</string>
+    <string name="label_settings">RunningStats settings</string>
+    <!-- Menu -->
+    <string name="menu_home">Home</string>
+    <string name="menu_new_entry">Add entry</string>
+    <string name="menu_histo">History</string>
+    <string name="menu_stats">Stats</string>
+    <string name="menu_settings">Settings</string>
+    <!-- Activité Accueil -->
+    <string name="last_run">Last run : </string>
+    <string name="add_entry">Add Entry</string>
+    <string name="see_histo">See history</string>
+    <!-- Activité Ajout -->
+    <string name="new_entry">New entry</string>
+    <string name="date_entry">Date : </string>
+    <string name="hour_entry"> Hour : </string>
+    <string name="name_entry"> Name : </string>
+    <string name="distance_entry"> Distance : </string>
+    <string name="time_entry">Time : </string>
+    <string name="ranking_entry">Ranking : </string>
+    <string name="save">Save</string>
+    <string name="length_entry">Distance :</string>
+    <string name="length_unit">m</string>
+    <string name="time_unit">s</string>
+    <!-- Activité Historique -->
+
+    <!-- Activité Graphique -->
+    <string name="graph">Graph</string>
+    <!-- Activité Stats -->
+    <string name="stats">Stats</string>
+    <string name="distance_total">Total distance : </string>
+    <string name="time_total">Total time : </string>
+    <string name="avg_speed">Average speed : </string>
+    <string name="best_time">Best time : </string>
+    <string name="the">The : </string>
+    <string name="worst_time">Worst time : </string>
+</resources>

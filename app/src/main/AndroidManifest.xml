@@ -12,7 +12,7 @@
 
         <activity android:name=".ActiviteAccueil"
             android:icon="@mipmap/ic_launcher"
-            android:label="Running Stats">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,19 +21,19 @@
 
         <activity
             android:name=".ActiviteAjout"
-            android:label="Enregsitrement" />
+            android:label="@string/label_new_entry" />
 
         <activity android:name=".ActiviteParam"
-            android:label="Parametres"/>
+            android:label="@string/label_settings"/>
 
         <activity android:name=".ActiviteStats"
-            android:label="Statistiques"/>
+            android:label="@string/label_stats"/>
 
         <activity android:name=".ActiviteGraph"
-            android:label="Graphique"/>
+            android:label="@string/graph"/>
 
         <activity android:name=".ActiviteHistorique"
-            android:label="historique"/>
+            android:label="@string/label_histo"/>
     </application>
 
 </manifest>
