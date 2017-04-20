@@ -36,17 +36,19 @@
         android:layout_height="wrap_content">
 
         <Button
+            style="@style/button"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/add_entry"
-            style="@style/button"/>
+            android:onClick="gotoAjout"/>
 
         <Button
+            style="@style/button"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/see_histo"
-            style="@style/button"/>
+            android:onClick="gotoHistorique"/>
     </LinearLayout>
 </LinearLayout>
