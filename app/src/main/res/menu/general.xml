@@ -6,6 +6,11 @@
         android:icon="@android:drawable/ic_menu_more"
         android:showAsAction="ifRoom|withText">
         <menu>
+
+            <item
+                android:id="@+id/menu_accueil"
+                android:title="Accueil"
+                />
             <item
                 android:id="@+id/menu_enregistrer"
                 android:title="Ajouter entrée"
@@ -21,6 +26,7 @@
                 android:id="@+id/menu_parametres"
                 android:title="Paramètres"
                 />
+
         </menu>
     </item>
 
