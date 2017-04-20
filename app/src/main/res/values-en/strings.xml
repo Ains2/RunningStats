@@ -29,6 +29,7 @@
     <string name="length_unit">m</string>
     <string name="time_unit">s</string>
     <!-- Activité Historique -->
+    <string name="historique">History</string>
 
     <!-- Activité Graphique -->
     <string name="graph">Graph</string>

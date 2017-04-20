@@ -1,12 +1,14 @@
 package fr.cva.ldnr.runningstats;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TableLayout;
@@ -114,5 +116,10 @@ public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
     }
 */
 
+    }
+
+    public void gotoGraphique (View view) {
+        Intent intent = new Intent(this, ActiviteGraph.class);
+        startActivity(intent);
     }
 }
