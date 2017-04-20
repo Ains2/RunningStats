@@ -1,6 +1,7 @@
 package fr.cva.ldnr.runningstats.GestionDonnees;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -32,12 +33,13 @@ public class GestionBDD extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("INSERT INTO sprint(dist, temps, dates, compet, nom, classement) VALUES (?,?,?,?,?,?)",
                 new Object[]{dist, tmp, date, compet, nom, classement});
+        Log.i("GestionBDD",dist + " "+ tmp + " "+ date +" "+ compet + nom + classement);
     }
 
-    public ArrayList selectSprint(String req){
+    public Cursor selectSprint(String req){
         SQLiteDatabase db = getReadableDatabase();
         String[] str = new String[0];
-        db.rawQuery(req,str);
-        return null;
+        Cursor c = db.rawQuery(req,str);
+        return c;
     }
 }
