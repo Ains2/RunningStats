@@ -41,4 +41,12 @@
     <string name="best_time">Meilleur temps : </string>
     <string name="the">Le : </string>
     <string name="worst_time">Moins bon temps : </string>
+    <!-- Activité Paramètres -->
+    <string name="display">Affichage</string>
+    <string name="theme_choise">Choisissez un thème : </string>
+    <string name="light">Clair</string>
+    <string name="dark">Sombre</string>
+    <string name="export">Exporter les données</string>
+    <string name="erase">Effacer les données</string>
+
 </resources>

@@ -40,4 +40,11 @@
     <string name="best_time">Best time : </string>
     <string name="the">The : </string>
     <string name="worst_time">Worst time : </string>
+    <!-- Activité Paramètres -->
+    <string name="display">Display</string>
+    <string name="theme_choise">Choose a theme : </string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+    <string name="export">Database export</string>
+    <string name="erase">Erase database</string>
 </resources>

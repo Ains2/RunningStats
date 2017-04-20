@@ -1,66 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    style="@style/commun"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
+        style="@style/commun.titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="25dp"
-        android:text="Affichage"
-        android:textColor="#ffffff"
-        android:textSize="25sp" />
+        android:text="@string/display" />
 
     <LinearLayout
+        style="@style/commun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <CheckBox
-            android:layout_width="0px"
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Clair"
-            android:textSize="16dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="50px"
-            />
+            android:padding="20sp">
 
-        <CheckBox
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:text="Sombre"
-            android:textSize="16dp"
-            android:layout_weight="3"
-            />
+            <TextView
+                style="@style/commun"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/theme_choise" />
 
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/light" />
 
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/dark" />
+        </RadioGroup>
     </LinearLayout>
 
     <Button
         android:id="@+id/parametres_export"
+        style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:text="Exporter données"
-        android:textColor="#000000"
-        android:background="#7aa7da"/>
+        android:text="@string/export" />
 
     <Button
         android:id="@+id/parametres_effacer"
+        style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="bottom"
-        android:text="Effacer données"
-        android:textColor="#000000"
-        android:background="#7aa7da"/>
+        android:text="@string/erase" />
 
 </LinearLayout>
