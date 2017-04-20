@@ -3,6 +3,7 @@ package fr.cva.ldnr.runningstats.GestionDonnees;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -18,7 +19,8 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE sprint(id INTEGER PRIMARY KEY, distance INTEGER, temps DOUBLE, date DATETIME, compet BOOLEAN, nom TEXT, classement INTEGER)");
+        db.execSQL("CREATE TABLE sprint(id INTEGER AUTO_INCREMENT PRIMARY KEY, dist INTEGER, temps DOUBLE, dates DATETIME, compet BOOLEAN, nom TEXT, classement INTEGER)");
+        Log.i("BDD","Done");
     }
 
     @Override
@@ -28,7 +30,7 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     public void insertSprint(int dist, double tmp, Date date, boolean compet, String nom, int classement){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT INTO sprint(distance, temps, date, compet, nom, classement) VALUES (?,?)",
+        db.execSQL("INSERT INTO sprint(dist, temps, dates, compet, nom, classement) VALUES (?,?,?,?,?,?)",
                 new Object[]{dist, tmp, date, compet, nom, classement});
     }
 

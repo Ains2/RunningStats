@@ -19,7 +19,7 @@ import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
  * Created by Nanwee on 19/04/2017.
  */
 
-public class ActiviteAjout extends Activity {
+public class ActiviteAjout extends Menu {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,7 @@ public class ActiviteAjout extends Activity {
         DatePicker dp = (DatePicker) findViewById(R.id.date_entry);
         TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
         String sDate = dp.getYear()+"/"+dp.getMonth()+"/"+dp.getDayOfMonth()+" "+tp.getHour()+":"+tp.getMinute();
-        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
         try {
             Date date = sdf.parse(sDate);
             Log.i("Ajout", "date : "+sdf.format(date));
