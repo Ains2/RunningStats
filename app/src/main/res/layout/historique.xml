@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/commun"
+    >
+
+        <TextView
+            style="@style/commun.titre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Historique"/>
+
+
+<!-- Première technique
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:stretchColumns="0"
+            android:layout_height="wrap_content"
+            android:id="@+id/idTable">
+        </TableLayout>
+    </ScrollView>
+    -->
+
+        <!--pour technique avec cursor-->
+        <ListView
+            android:id="@+id/lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+
+
+
+</LinearLayout>
