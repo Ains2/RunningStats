@@ -36,10 +36,11 @@ public class GestionBDD extends SQLiteOpenHelper {
         Log.i("GestionBDD",dist + " "+ tmp + " "+ date +" "+ compet + nom + classement);
     }
 
-    public Cursor selectSprint(String req){
+    public Cursor selectSprint(String[]champs, String where, String groupby, String having, String orderby, String limit ){
         SQLiteDatabase db = getReadableDatabase();
         String[] str = new String[0];
-        Cursor c = db.rawQuery(req,str);
+        //Cursor c = db.rawQuery(req,str)
+        Cursor c = db.query("sprint", champs, where, str, groupby, having, orderby, limit);
         return c;
     }
 }
