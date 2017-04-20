@@ -32,14 +32,15 @@ public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
     Log.i("hist", "coucou");
 
             GestionBDD gbdd = new GestionBDD(this);
-            Cursor c = gbdd.selectSprint("SELECT dates, dist, temps FROM sprint ORDER BY dates DESC LIMIT 10");
+            /*Cursor c = gbdd.selectSprint("SELECT dates, dist, temps FROM sprint ORDER BY dates DESC LIMIT 10");*/
+            String [] tab= {"dates","dist","temps"};
+            Cursor c = gbdd.selectSprint(tab, null, null, null,"dates DESC", "10");
             Log.i("h",c.getColumnCount()+" "+c.getCount());
             for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
                /* Date dat=c.get*/
                 int dist = c.getInt(1);
                 double temps= c.getDouble(2);
-
-                Log.i("historique", dist +" "+temps);
+            Log.i("hh",dist + " " + temps);
 
             }
             c.close();
