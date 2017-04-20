@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
+
 /**
  * Created by Ains on 20/04/2017.
  */
@@ -19,6 +21,7 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accueil);
+        GestionBDD gbdd = GestionBDD.getInstance(this);
     }
 
     public void gotoAjout(View view) {
