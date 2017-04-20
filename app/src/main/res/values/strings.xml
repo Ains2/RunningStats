@@ -17,4 +17,15 @@
     <string name="length_unit">m</string>
     <string name="time_unit">s</string>
     <!-- Activité Historique -->
+
+    <!-- Activité Graphique -->
+    <string name="graph">Graphique</string>
+    <!-- Activité Stats -->
+    <string name="stats">Statistiques</string>
+    <string name="distance_total">Distance totale : </string>
+    <string name="time_total">Durée totale : </string>
+    <string name="avg_speed">Vitesse moyenne : </string>
+    <string name="best_time">Meilleur temps : </string>
+    <string name="the">Le : </string>
+    <string name="worst_time">Moins bon temps : </string>
 </resources>
