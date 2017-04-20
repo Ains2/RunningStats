@@ -9,7 +9,7 @@
             style="@style/commun.titre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Historique"/>
+            android:text="@string/historique"/>
 
 
 <!-- Première technique
@@ -26,13 +26,17 @@
     </ScrollView>
     -->
 
-        <!--pour technique avec cursor-->
-        <ListView
-            android:id="@+id/lv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
-
-
-
-</LinearLayout>
+        <!--
+                <ListView
+                    android:id="@+id/lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+        -->
+                <Button
+                    android:id="@+id/gotoGraphique"
+                    style="@style/button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gographique"
+                    android:onClick="gotoGraphique"/>
+        </LinearLayout>
