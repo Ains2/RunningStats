@@ -29,10 +29,12 @@
     <string name="length_entry">Distance :</string>
     <string name="length_unit">m</string>
     <string name="time_unit">s</string>
+    <string name="type">Type : </string>
+    <string name="competition">Compétition</string>
+    <string name="training">Entrainement</string>
     <!-- Activité Historique -->
     <string name="historique">Historique</string>
     <string name="gographique">Graphique</string>
-
 
 
     <!-- Activité Graphique -->

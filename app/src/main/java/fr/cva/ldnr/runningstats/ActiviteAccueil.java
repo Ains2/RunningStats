@@ -1,20 +1,12 @@
 package fr.cva.ldnr.runningstats;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
@@ -32,21 +24,28 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
 
         GestionBDD gbdd = GestionBDD.getInstance(this);
 
-
-        String[] tab = {"_id", "dates", "dist", "temps"};
+        String[] tab = {"_id", "dates", "dist", "temps", "compet", "nom", "classement"};
         Cursor c = gbdd.selectSprint(tab, null, new String[0], null, null, "dates DESC", "1");
         // Placement sur le résultat
         c.moveToFirst();
+        // Récup des données
         String date = c.getString(1);
         int dist = c.getInt(2);
         int temps = c.getInt(3);
+        int compet = c.getInt(4);
+        String nom = c.getString(5);
+        int classement = c.getInt(6);
+        // Configuration pour affichage
         String txt = dist + " m / " + temps + "s";
         TextView last_run = (TextView) findViewById(R.id.last_run);
         last_run.setText(txt);
         TextView date_last_run = (TextView) findViewById(R.id.date);
-        date_last_run.setText("Entrainement : " +date);
-// Ajouter le nom quand sera fait dans ajout
-
+        // Affichag selon le cas entrainement ou compétition
+        if (!nom.equals("")) {
+            date_last_run.setText("\"" + nom + "\"\n"+getString(R.string.ranking_entry)+ classement + "\n" + date);
+        } else {
+            date_last_run.setText(getString(R.string.training)+" : \n" + date);
+        }
     }
 
     public void gotoAjout(View view) {

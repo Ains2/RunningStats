@@ -28,6 +28,9 @@
     <string name="length_entry">Distance :</string>
     <string name="length_unit">m</string>
     <string name="time_unit">s</string>
+    <string name="type">Type : </string>
+    <string name="competition">Competition</string>
+    <string name="training">Training</string>
     <!-- Activité Historique -->
     <string name="historique">History</string>
 
