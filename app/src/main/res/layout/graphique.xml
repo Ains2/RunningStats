@@ -11,15 +11,19 @@ style="@style/commun">
     android:layout_height="wrap_content"
     android:text="@string/graph" />
 
+    <!--
 <com.jjoe64.graphview.GraphView
     android:layout_width="match_parent"
     android:layout_height="200dip"
     android:id="@+id/graph" />
-
+-->
 
 <Button
+    style="@style/button"
+    android:id="@+id/seehisto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/see_histo"
-    style="@style/button"/>
+    android:onClick="seehisto"
+    />
 </LinearLayout>
