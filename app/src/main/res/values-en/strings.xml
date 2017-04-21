@@ -13,6 +13,8 @@
     <string name="menu_stats">Stats</string>
     <string name="menu_settings">Settings</string>
     <!-- Activité Accueil -->
+    <string name="titre">Welcome on RunningStats</string>
+    <string name="todo">Add some entries of your performances</string>
     <string name="last_run">Last run : </string>
     <string name="add_entry">Add Entry</string>
     <string name="see_histo">See history</string>
