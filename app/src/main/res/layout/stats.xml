@@ -1,601 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/commun"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-        style="@style/commun"
+    <TextView
+        style="@style/commun.titre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="@string/stats" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
-            style="@style/commun.titre"
-            android:layout_width="match_parent"
+            style="@style/commun"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/stats" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance_total" />
-
-            <TextView
-                android:id="@+id/distance_total"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/time_total" />
-
-            <TextView
-                android:id="@+id/time_total"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/avg_speed" />
-
-            <TextView
-                android:id="@+id/avg_speed"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <Spinner
-            android:id="@+id/selectdist"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance_total" />
-
-            <TextView
-                android:id="@+id/distance_total_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/time_total" />
-
-            <TextView
-                android:id="@+id/time_total_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/avg_speed" />
-
-            <TextView
-                android:id="@+id/avg_speed_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/best_time" />
-
-            <TextView
-                android:id="@+id/best_time_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_best_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/worst_time" />
-
-            <TextView
-                android:id="@+id/worst_time_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_worst_dist"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <!--<TextView
-            style="@style/commun.titre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="100m" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance_total" />
-
-            <TextView
-                android:id="@+id/distance_total_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/time_total" />
-
-            <TextView
-                android:id="@+id/time_total_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/avg_speed" />
-
-            <TextView
-                android:id="@+id/avg_speed_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/best_time" />
-
-            <TextView
-                android:id="@+id/best_time_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_best_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/worst_time" />
-
-            <TextView
-                android:id="@+id/worst_time_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_worst_100"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+            android:text="@string/distance_total" />
 
         <TextView
-            style="@style/commun.titre"
-            android:layout_width="match_parent"
+            android:id="@+id/distance_total"
+            android:layout_width="0sp"
             android:layout_height="wrap_content"
-            android:text="200m" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance_total" />
-
-            <TextView
-                android:id="@+id/distance_total_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/time_total" />
-
-            <TextView
-                android:id="@+id/time_total_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/avg_speed" />
-
-            <TextView
-                android:id="@+id/avg_speed_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/best_time" />
-
-            <TextView
-                android:id="@+id/best_time_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_best_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/worst_time" />
-
-            <TextView
-                android:id="@+id/worst_time_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_worst_200"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <TextView
-            style="@style/commun.titre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="400m" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/distance_total" />
-
-            <TextView
-                android:id="@+id/distance_total_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/time_total" />
-
-            <TextView
-                android:id="@+id/time_total_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/avg_speed" />
-
-            <TextView
-                android:id="@+id/avg_speed_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/best_time" />
-
-            <TextView
-                android:id="@+id/best_time_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_best_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/worst_time" />
-
-            <TextView
-                android:id="@+id/worst_time_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/the" />
-
-            <TextView
-                android:id="@+id/the_worst_400"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout> -->
+            android:layout_weight="1" />
     </LinearLayout>
-</ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_total" />
+
+        <TextView
+            android:id="@+id/time_total"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/avg_speed" />
+
+        <TextView
+            android:id="@+id/avg_speed"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/selectdist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distance_total" />
+
+        <TextView
+            android:id="@+id/distance_total_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_total" />
+
+        <TextView
+            android:id="@+id/time_total_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/avg_speed" />
+
+        <TextView
+            android:id="@+id/avg_speed_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/best_time" />
+
+        <TextView
+            android:id="@+id/best_time_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the" />
+
+        <TextView
+            android:id="@+id/the_best_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/worst_time" />
+
+        <TextView
+            android:id="@+id/worst_time_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/the" />
+
+        <TextView
+            android:id="@+id/the_worst_dist"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>

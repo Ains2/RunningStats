@@ -95,7 +95,7 @@ public class ActiviteStats extends Menu {
         c = gbdd.selectSprint(tab, "dist=?", args, null, null, "temps ASC", "1");
         String tt, td;
         if(c.moveToFirst()){
-            tt = c.getInt(0)+" "+getString(R.string.time_unit);
+            tt = c.getDouble(0)+" "+getString(R.string.time_unit);
             td = c.getString(1);
         }else {
             tt = td = "-";
@@ -107,7 +107,7 @@ public class ActiviteStats extends Menu {
         //Worst
         c = gbdd.selectSprint(tab, "dist=?", args, null, null, "temps DESC", "1");
         if(c.moveToFirst()){
-            tt = c.getInt(0)+" "+getString(R.string.time_unit);
+            tt = c.getDouble(0)+" "+getString(R.string.time_unit);
             td = c.getString(1);
         }else {
             tt = td = "-";
