@@ -11,6 +11,10 @@ style="@style/commun">
     android:layout_height="wrap_content"
     android:text="@string/graph" />
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <!--
 <com.jjoe64.graphview.GraphView
     android:layout_width="match_parent"
