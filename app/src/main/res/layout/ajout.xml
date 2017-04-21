@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/commun"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,31 +13,31 @@
         android:text="@string/new_entry" />
 
     <TextView
+        style="@style/commun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/date_entry"
-        style="@style/commun"/>
+        android:text="@string/date_entry" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-<!--
-        <TextView
-            style="@style/commun"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/date_entry" />-->
+        <!--
+                <TextView
+                    style="@style/commun"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/date_entry" />-->
 
         <DatePicker
             android:id="@+id/date_entry"
             android:layout_width="0sp"
             android:layout_height="100sp"
             android:layout_weight="3"
+            android:calendarViewShown="false"
             android:datePickerMode="spinner"
-            android:spinnersShown="true"
-            android:calendarViewShown="false"/>
+            android:spinnersShown="true" />
 
         <TimePicker
             android:id="@+id/hour_entry"
@@ -45,27 +46,80 @@
             android:layout_weight="2"
             android:timePickerMode="spinner" />
 
-
     </LinearLayout>
-<!--
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type" />
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/competition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="see"
+                android:text="@string/competition" />
+
+            <RadioButton
+                android:id="@+id/training"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="hide"
+                android:text="@string/training" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/commun"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/time_entry" />
+            android:text="@string/name_entry" />
 
-        <TimePicker
-            android:id="@+id/hour_entry"
+        <EditText
+            android:id="@+id/name_entry"
             android:layout_width="0sp"
-            android:layout_height="100sp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="text" />
+    </LinearLayout>
+    <!--
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </LinearLayout>-->
+            <TextView
+                style="@style/commun"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/time_entry" />
+
+            <TimePicker
+                android:id="@+id/hour_entry"
+                android:layout_width="0sp"
+                android:layout_height="100sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +138,8 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="numberDecimal"/>
+            android:inputType="numberDecimal" />
+
         <TextView
             style="@style/commun"
             android:layout_width="wrap_content"
@@ -104,17 +159,46 @@
             android:layout_weight="1"
             android:text="@string/length_entry" />
 
-        <AutoCompleteTextView
-            android:id="@+id/length_entry"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="number"/>
+        <!--  <AutoCompleteTextView
+              android:id="@+id/length_entry"
+              android:layout_width="0sp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:inputType="number" />
+              -->
+
+        <Spinner
+            android:id="@+id/list_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></Spinner>
+
         <TextView
             style="@style/commun"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/length_unit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ranking_entry" />
+
+        <EditText
+            android:id="@+id/ranking_entry"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number" />
     </LinearLayout>
 
     <Button
