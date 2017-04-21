@@ -22,13 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!--
-                <TextView
-                    style="@style/commun"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/date_entry" />-->
 
         <DatePicker
             android:id="@+id/date_entry"
@@ -39,13 +32,15 @@
             android:datePickerMode="spinner"
             android:spinnersShown="true" />
 
-        <TimePicker
+     <!--  Problème de compatibilité avec les versions < 23
+
+      <TimePicker
             android:id="@+id/hour_entry"
             android:layout_width="0sp"
             android:layout_height="100sp"
             android:layout_weight="2"
             android:timePickerMode="spinner" />
-
+-->
     </LinearLayout>
 
 
@@ -101,25 +96,6 @@
             android:layout_weight="1"
             android:inputType="text" />
     </LinearLayout>
-    <!--
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                style="@style/commun"
-                android:layout_width="0sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/time_entry" />
-
-            <TimePicker
-                android:id="@+id/hour_entry"
-                android:layout_width="0sp"
-                android:layout_height="100sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -158,14 +134,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/length_entry" />
-
-        <!--  <AutoCompleteTextView
-              android:id="@+id/length_entry"
-              android:layout_width="0sp"
-              android:layout_height="wrap_content"
-              android:layout_weight="1"
-              android:inputType="number" />
-              -->
 
         <Spinner
             android:id="@+id/list_dist"

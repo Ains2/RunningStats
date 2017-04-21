@@ -25,8 +25,10 @@ public class ActiviteAjout extends Menu {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ajout);
-        TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
+        /* Problème de compatibilité avec les versions < 23
+         TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
         tp.setIs24HourView(true);
+           */
 
         //Récupération du Spinner de la liste des distances
         Spinner list_dist = (Spinner) findViewById(R.id.list_dist);
@@ -68,14 +70,18 @@ public class ActiviteAjout extends Menu {
 
     public void saveRun(View v) {
         DatePicker dp = (DatePicker) findViewById(R.id.date_entry);
-        TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
+        // Problème de compatibilité avec les versions < 23
+        // TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
         String date = dp.getYear() + "/";
-        int month = dp.getMonth()+1;
+        int month = dp.getMonth() + 1;
         if (month < 10) date += "0";
         date += month + "/";
         if (dp.getDayOfMonth() < 10) date += "0";
         date += dp.getDayOfMonth() + " ";
-      /*  if(tp.getHour()<10) date+="0";
+
+      /*  Problème de compatibilité avec les versions < 23
+
+        if(tp.getHour()<10) date+="0";
         date+=tp.getHour()+":";
         if(tp.getMinute()<10) date+="0";
         date+=tp.getMinute();*/
@@ -102,7 +108,7 @@ public class ActiviteAjout extends Menu {
                 ranking = Integer.parseInt(ranking_convers);
             }
         } catch (Exception ex) {
-        // Pas d'exception, le ranking reste à 0
+            // Pas d'exception, le ranking reste à 0
         }
 
         int compet = 0;
