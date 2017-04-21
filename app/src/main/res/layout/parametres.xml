@@ -47,7 +47,8 @@
         style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/export" />
+        android:text="@string/export"
+        android:onClick="parametres_export" />
 
     <Button
         android:id="@+id/parametres_effacer"
