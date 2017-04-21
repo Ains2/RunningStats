@@ -1,60 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     style="@style/commun"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        style="@style/commun.titre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/display" />
-
     <LinearLayout
+        android:id="@+id/settings"
         style="@style/commun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <RadioGroup
+        <TextView
+            style="@style/commun.titre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/display" />
+
+        <LinearLayout
+            style="@style/commun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20sp">
+            android:orientation="horizontal">
 
-            <TextView
-                style="@style/commun"
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/theme_choise" />
+                android:padding="20sp">
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/light" />
+                <TextView
+                    style="@style/commun"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theme_choise" />
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="@string/dark" />
-        </RadioGroup>
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/light" />
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/dark" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/parametres_export"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/export" />
+
+        <Button
+            android:id="@+id/parametres_effacer"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="erase"
+            android:text="@string/erase" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/parametres_export"
-        style="@style/button"
+    <LinearLayout
+        android:id="@+id/sure"
+        style="@style/commun"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/export"
-        android:onClick="parametres_export" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
 
-    <Button
-        android:id="@+id/parametres_effacer"
-        style="@style/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/erase" />
+        <TextView
+            style="@style/commun.titre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sure_title" />
 
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sure" />
+
+        <Button
+            android:id="@+id/oui"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="yes"
+            android:text="@string/yes" />
+
+        <Button
+            android:id="@+id/non"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="no"
+            android:text="@string/no" />
+    </LinearLayout>
 </LinearLayout>

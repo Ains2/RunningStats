@@ -53,4 +53,9 @@
     <string name="dark">Dark</string>
     <string name="export">Database export</string>
     <string name="erase">Erase database</string>
+    <string name="sure_title">Warning !</string>
+    <string name="sure">All datas will be lost.\n Do you really \n want to erase ?</string>
+    <string name="yes">Yes, erase everything</string>
+    <string name="no">No, keep datas</string>
+    <string name="sup_ok">Datas are succesfully delete...</string>
 </resources>

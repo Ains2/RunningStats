@@ -54,4 +54,9 @@
     <string name="dark">Sombre</string>
     <string name="export">Exporter les données</string>
     <string name="erase">Effacer les données</string>
+    <string name="sure_title">Attention !</string>
+    <string name="sure">La suppression des données\n est définitive.\n Voulez vous vraiment\n tout supprimer ?</string>
+    <string name="yes">Oui, tout supprimer</string>
+    <string name="no">Non, garder mes données</string>
+    <string name="sup_ok">Suppression effecutée avec succès...</string>
 </resources>
