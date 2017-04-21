@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Running Stats</string>
-
     <!-- Labels -->
     <string name="label_new_entry">Add a new entry</string>
     <string name="label_histo">History of your performances</string>
@@ -37,7 +36,6 @@
     <string name="add_ok">New entry add successfully</string>
     <!-- Activité Historique -->
     <string name="historique">History</string>
-
     <!-- Activité Graphique -->
     <string name="graph">Graph</string>
     <!-- Activité Stats -->

@@ -11,8 +11,6 @@
     <string name="menu_histo">Historique de vos performances</string>
     <string name="menu_stats">Statitiques détaillées</string>
     <string name="menu_settings">Paramètres de RunningStats</string>
-
-
     <!-- Activité Accueil -->
     <string name="titre">Bienvenue sur RunningStats</string>
     <string name="todo">Ajoutez des entrées de vos performances</string>
@@ -39,8 +37,6 @@
     <!-- Activité Historique -->
     <string name="historique">Historique</string>
     <string name="gographique">Graphique</string>
-
-
     <!-- Activité Graphique -->
     <string name="graph">Graphique</string>
     <!-- Activité Stats -->
@@ -58,5 +54,4 @@
     <string name="dark">Sombre</string>
     <string name="export">Exporter les données</string>
     <string name="erase">Effacer les données</string>
-
 </resources>
