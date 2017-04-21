@@ -59,4 +59,5 @@
     <string name="yes">Oui, tout supprimer</string>
     <string name="no">Non, garder mes données</string>
     <string name="sup_ok">Suppression effecutée avec succès...</string>
+    <string name="no_data_text">Aucune valeur trouvée</string>
 </resources>

@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-style="@style/commun">
-
-<TextView
-    style="@style/commun.titre"
+    style="@style/commun"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/graph" />
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/commun.titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/graph" />
+
+    <Spinner
+        android:id="@+id/selectdist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <!--
-<com.jjoe64.graphview.GraphView
-    android:layout_width="match_parent"
-    android:layout_height="200dip"
-    android:id="@+id/graph" />
--->
+        android:layout_height="0sp"
+        android:layout_weight="1" />
 
-<Button
-    style="@style/button"
-    android:id="@+id/seehisto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/see_histo"
-    android:onClick="seehisto"
-    />
+    <Button
+        android:id="@+id/seehisto"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="seehisto"
+        android:text="@string/see_histo" />
 </LinearLayout>
