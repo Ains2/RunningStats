@@ -22,7 +22,6 @@
 
     <style name="commun.accueil">
         <item name="android:textSize">30sp</item>
-
     </style>
 
     <style name="button">
@@ -32,4 +31,10 @@
         <item name="android:layout_margin">10sp</item>
         <item name="android:padding">10sp</item>
     </style>
+
+   <style name="edittext">
+       <item name="android:paddingLeft">10sp</item>
+       <item name="android:background">#3311b4ff</item>
+   </style>
+
 </resources>
