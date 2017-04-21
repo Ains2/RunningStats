@@ -30,7 +30,7 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE sprint(id INTEGER AUTO_INCREMENT PRIMARY KEY, dist INTEGER, temps REAL, dates TEXT, compet INTEGER, nom TEXT, classement INTEGER)");
+        db.execSQL("CREATE TABLE sprint(_id INTEGER AUTO_INCREMENT PRIMARY KEY, dist INTEGER, temps REAL, dates TEXT, compet INTEGER, nom TEXT, classement INTEGER)");
     }
 
     @Override
@@ -51,7 +51,7 @@ public class GestionBDD extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO sprint(dist, temps, dates, compet, nom, classement) VALUES (?,?,?,?,?,?)",
                 new Object[]{dist, tmp, date, compet, nom, classement});
         //Log.i("GestionBDD",dist + " "+ tmp + " "+ date +" "+ compet + nom + classement);
-        db.close();
+        //db.close();
         /*db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT dates, dist, temps FROM sprint ORDER BY dates DESC LIMIT 10",//"SELECT COUNT(*) FROM sprint",
                 new String[0]);
