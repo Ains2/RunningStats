@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/commun"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    style="@style/commun">
+    android:orientation="vertical">
 
     <TextView
         style="@style/commun.titre"
@@ -12,12 +12,14 @@
         android:text="@string/last_run" />
 
     <TextView
+        android:id="@+id/last_run"
         style="@style/commun.accueil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="100m / 11s" />
 
     <TextView
+        android:id="@+id/date"
         style="@style/commun.accueil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,8 +29,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_margin="15sp"
+        android:layout_weight="1"
         android:src="@drawable/jogger" />
 
     <LinearLayout
@@ -40,15 +42,15 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/add_entry"
-            android:onClick="gotoAjout"/>
+            android:onClick="gotoAjout"
+            android:text="@string/add_entry" />
 
         <Button
             style="@style/button"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/see_histo"
-            android:onClick="gotoHistorique"/>
+            android:onClick="gotoHistorique"
+            android:text="@string/see_histo" />
     </LinearLayout>
 </LinearLayout>
