@@ -33,6 +33,8 @@
     <string name="type">Type : </string>
     <string name="competition">Competition</string>
     <string name="training">Training</string>
+    <string name="button_add_entry">Add another entry</string>
+    <string name="add_ok">New entry add successfully</string>
     <!-- Activité Historique -->
     <string name="historique">History</string>
 

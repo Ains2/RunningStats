@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/commun"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -32,15 +32,15 @@
             android:datePickerMode="spinner"
             android:spinnersShown="true" />
 
-     <!--  Problème de compatibilité avec les versions < 23
+        <!--  Problème de compatibilité avec les versions < 23
 
-      <TimePicker
-            android:id="@+id/hour_entry"
-            android:layout_width="0sp"
-            android:layout_height="100sp"
-            android:layout_weight="2"
-            android:timePickerMode="spinner" />
--->
+         <TimePicker
+               android:id="@+id/hour_entry"
+               android:layout_width="0sp"
+               android:layout_height="100sp"
+               android:layout_weight="2"
+               android:timePickerMode="spinner" />
+   -->
     </LinearLayout>
 
 
@@ -95,6 +95,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="text" />
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  " />
     </LinearLayout>
 
     <LinearLayout
@@ -167,12 +173,29 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:inputType="number" />
+
+        <TextView
+            style="@style/commun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  " />
     </LinearLayout>
 
     <Button
+        android:id="@+id/save"
         style="@style/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="saveRun"
         android:text="@string/save" />
+
+    <Button
+        android:id="@+id/new_entry"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gotoAjout"
+        android:text="@string/button_add_entry"
+        android:visibility="gone" />
+
 </LinearLayout>

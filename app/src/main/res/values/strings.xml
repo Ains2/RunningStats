@@ -34,6 +34,8 @@
     <string name="type">Type : </string>
     <string name="competition">Compétition</string>
     <string name="training">Entrainement</string>
+    <string name="button_add_entry">Ajouter une autre entrée</string>
+    <string name="add_ok">Entrée ajoutée avec succès</string>
     <!-- Activité Historique -->
     <string name="historique">Historique</string>
     <string name="gographique">Graphique</string>

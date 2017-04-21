@@ -1,15 +1,18 @@
 package fr.cva.ldnr.runningstats;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -119,8 +122,17 @@ public class ActiviteAjout extends Menu {
         }
         GestionBDD gbdd = GestionBDD.getInstance(this);
         gbdd.insertSprint(dist, temps, date, compet, name, ranking);
+        Button button_save = (Button) findViewById(R.id.save);
+        button_save.setVisibility(LinearLayout.GONE);
+        Button button_new_entry = (Button)findViewById(R.id.new_entry);
+        button_new_entry.setVisibility(LinearLayout.VISIBLE);
+        Toast.makeText(this,getString(R.string.add_ok),Toast.LENGTH_LONG).show();
 
     }
 
+    public void gotoAjout(View view) {
+        Intent intent = new Intent(this, ActiviteAjout.class);
+        startActivity(intent);
+    }
 
 }
