@@ -59,4 +59,5 @@
     <string name="no">No, keep datas</string>
     <string name="sup_ok">Datas are succesfully delete...</string>
     <string name="no_data_text">No data found</string>
+    <string name="speed_unit">m/s</string>
 </resources>

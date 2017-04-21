@@ -7,7 +7,7 @@
     <LinearLayout
         style="@style/commun"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
@@ -71,11 +71,10 @@
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <TextView
-            style="@style/commun.titre"
+        <Spinner
+            android:id="@+id/selectdist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="60m" />
+            android:layout_height="wrap_content"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,7 +88,7 @@
                 android:text="@string/distance_total" />
 
             <TextView
-                android:id="@+id/distance_total_60"
+                android:id="@+id/distance_total_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -107,7 +106,7 @@
                 android:text="@string/time_total" />
 
             <TextView
-                android:id="@+id/time_total_60"
+                android:id="@+id/time_total_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -125,7 +124,7 @@
                 android:text="@string/avg_speed" />
 
             <TextView
-                android:id="@+id/avg_speed_60"
+                android:id="@+id/avg_speed_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -143,7 +142,7 @@
                 android:text="@string/best_time" />
 
             <TextView
-                android:id="@+id/best_time_60"
+                android:id="@+id/best_time_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -161,7 +160,7 @@
                 android:text="@string/the" />
 
             <TextView
-                android:id="@+id/the_best_60"
+                android:id="@+id/the_best_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -179,7 +178,7 @@
                 android:text="@string/worst_time" />
 
             <TextView
-                android:id="@+id/worst_time_60"
+                android:id="@+id/worst_time_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -197,13 +196,13 @@
                 android:text="@string/the" />
 
             <TextView
-                android:id="@+id/the_worst_60"
+                android:id="@+id/the_worst_dist"
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
         </LinearLayout>
 
-        <TextView
+        <!--<TextView
             style="@style/commun.titre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -597,6 +596,6 @@
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
-        </LinearLayout>
+        </LinearLayout> -->
     </LinearLayout>
 </ScrollView>

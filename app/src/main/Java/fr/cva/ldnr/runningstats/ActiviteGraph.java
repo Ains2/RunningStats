@@ -60,21 +60,19 @@ public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Log.i("ActiviteGraph", parent.toString());
             }
         });
     }
 
-    public void showgraph(String dist) {
+    private void showgraph(String dist) {
         GestionBDD gbdd = GestionBDD.getInstance(this);
         LineChart chart = (LineChart) findViewById(R.id.chart);
         try {
             String[] tab = {"_id", "dates", "dist", "temps"};
             String[] args = {dist};
-            Log.i("ActiviteGraph", "debut try");
             /* correspond à la requete: "SELECT dates, temps FROM sprint WHERE dist = 100 ORDER BY dates ASC"*/
             Cursor c = gbdd.selectSprint(tab, "dist=?", args, null, null, "dates ASC", null);
-            Log.i("ActiviteGraph", c.toString());
+
             List<Entry> entries = new ArrayList<>();
             if (c.moveToFirst()) {
                 int i = 0;

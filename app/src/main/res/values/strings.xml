@@ -60,4 +60,5 @@
     <string name="no">Non, garder mes données</string>
     <string name="sup_ok">Suppression effecutée avec succès...</string>
     <string name="no_data_text">Aucune valeur trouvée</string>
+    <string name="speed_unit">m/s</string>
 </resources>
