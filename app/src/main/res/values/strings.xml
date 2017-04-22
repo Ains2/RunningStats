@@ -61,4 +61,12 @@
     <string name="sup_ok">Suppression effecutée avec succès...</string>
     <string name="no_data_text">Aucune valeur trouvée</string>
     <string name="speed_unit">m/s</string>
+
+    <string-array name="dist_sprint">
+        <item>60</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+    </string-array>
+
 </resources>

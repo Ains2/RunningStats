@@ -42,19 +42,8 @@ public class ActiviteStats extends Menu {
 
         //Récupération du Spinner de la liste des distances
         Spinner list_dist = (Spinner) findViewById(R.id.selectdist);
-        //Création de la liste des distances
-        List<String> list = new ArrayList<>();
-        list.add("60");
-        list.add("100");
-        list.add("200");
-        list.add("400");
-
         // Création de l'adaptater pour afficher le contenu
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                this,
-                android.R.layout.simple_spinner_item,
-                list
-        );
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dist_sprint, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         list_dist.setAdapter(adapter);
         list_dist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
