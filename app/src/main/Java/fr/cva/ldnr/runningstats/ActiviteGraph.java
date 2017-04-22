@@ -80,9 +80,9 @@ public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
 
                 LineDataSet ds_tmps = new LineDataSet(entries_tmps, getString(R.string.graph_tmps,getString(R.string.time_unit)));
                 LineDataSet ds_moy = new LineDataSet(entries_moy, getString(R.string.graph_moy, getString(R.string.speed_unit)));
-                ds_tmps.setColor(Color.BLUE);
+                ds_tmps.setColor(Color.CYAN);
                 ds_tmps.setCircleColor(Color.CYAN);
-                ds_moy.setColor(Color.RED);
+                ds_moy.setColor(Color.MAGENTA);
                 ds_moy.setCircleColor(Color.MAGENTA);
                 ds_tmps.setValueTextColor(Color.WHITE);
                 ds_moy.setValueTextColor(Color.WHITE);
@@ -101,11 +101,16 @@ public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
                 x.setGranularity(1);
                 x.setTextColor(Color.WHITE);
 
-                YAxis y = chart.getAxisLeft();
-                y.setDrawLabels(true);
-                y.setAxisMinimum(0);
-                y.setGranularity(1);
-                y.setTextColor(Color.WHITE);
+                YAxis yl = chart.getAxisLeft();
+                yl.setDrawLabels(true);
+                yl.setAxisMinimum(0);
+                yl.setGranularity(1);
+                yl.setTextColor(Color.WHITE);
+
+                YAxis yr = chart.getAxisRight();
+                yr.setDrawLabels(false);
+                yr.setDrawAxisLine(false);
+                yr.setDrawGridLines(false);
 
                 //param legende
                 Legend leg = chart.getLegend();
