@@ -16,9 +16,6 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
 /**
@@ -40,9 +37,7 @@ public class ActiviteAjout extends Menu {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dist_sprint, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         list_dist.setAdapter(adapter);
-        // Concerne les buttons radio et leurs actions :
-        //RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
-        //radio_competition.setChecked(true);
+        //Affiche les boutons en fonction du type de course
         hideshow(list_dist);
     }
 
@@ -101,9 +96,14 @@ public class ActiviteAjout extends Menu {
         double temps = 0;
         try {
             temps = Double.parseDouble(etd.getText().toString());
+            if(temps<0){
+                complete = false;
+                Toast.makeText(this, getString(R.string.add_neg), Toast.LENGTH_LONG).show();
+            }
         }catch (Exception e){
             complete = false;
             Log.e("Ajout", e.getMessage());
+            Toast.makeText(this, getString(R.string.add_comp), Toast.LENGTH_LONG).show();
         }
 
 
@@ -139,8 +139,6 @@ public class ActiviteAjout extends Menu {
             }else{
                 Toast.makeText(this, getString(R.string.add_ko), Toast.LENGTH_LONG).show();
             }
-        }else{
-            Toast.makeText(this, getString(R.string.add_comp), Toast.LENGTH_LONG).show();
         }
     }
 

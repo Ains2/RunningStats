@@ -63,6 +63,7 @@
     <string name="speed_unit">m/s</string>
     <string name="add_ko">Erreur lors de l\'ajout</string>
     <string name="add_comp">Entrez un temps</string>
+    <string name="add_neg">Le temps ne peut être négatif</string>
 
     <string-array name="dist_sprint">
         <item>60</item>
