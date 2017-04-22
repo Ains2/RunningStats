@@ -1,14 +1,10 @@
 package fr.cva.ldnr.runningstats.GestionDonnees;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by Nanwee on 19/04/2017.
@@ -17,9 +13,8 @@ import java.util.Date;
 public class GestionBDD extends SQLiteOpenHelper {
     private static GestionBDD instance;
 
-    private GestionBDD(Context context) {
-        super(context, context.getClass().getName(), null, 1);
-    }
+    private GestionBDD(Context context) {super(context, "data", null, 1);}
+    //private GestionBDD(Context context) {super(context, context.getClass().getName(), null, 1);}
 
     public static GestionBDD getInstance(Context context){
         if (instance==null){
@@ -38,53 +33,24 @@ public class GestionBDD extends SQLiteOpenHelper {
 
     }
 
-    public void insertSprint(int dist, double tmp, String date, int compet, String nom, int classement){
-        SQLiteDatabase db = getWritableDatabase();
-        /*ContentValues values = new ContentValues();
-        values.put("dist",dist);
-        values.put("temps",tmp);
-        values.put("dates",date);
-        values.put("compet",compet);
-        values.put("nom",nom);
-        values.put("classement",classement);
-        db.insert("sprint", null, values);*/
-        db.execSQL("INSERT INTO sprint(dist, temps, dates, compet, nom, classement) VALUES (?,?,?,?,?,?)",
-                new Object[]{dist, tmp, date, compet, nom, classement});
-        //Log.i("GestionBDD",dist + " "+ tmp + " "+ date +" "+ compet + nom + classement);
-        //db.close();
-        /*db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT dates, dist, temps FROM sprint ORDER BY dates DESC LIMIT 10",//"SELECT COUNT(*) FROM sprint",
-                new String[0]);
-        Log.i("h",c.getColumnCount()+" "+c.getCount());
-        for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
-            date = c.getString(0);
-            dist = c.getInt(1);
-            double temps= c.getDouble(2);
-            Log.i("hh",date+" "+ dist + " " + temps);
-
-        }*/
-        /*c.moveToFirst();
-        int nb = c.getInt(0);
-        Log.i("GestionBDD", "nb lignes "+nb);
-        c.close();*/
+    public boolean insertSprint(int dist, double tmp, String date, int compet, String nom, int classement){
+        try{
+            SQLiteDatabase db = getWritableDatabase();
+            db.execSQL("INSERT INTO sprint(dist, temps, dates, compet, nom, classement) VALUES (?,?,?,?,?,?)",
+                    new Object[]{dist, tmp, date, compet, nom, classement});
+            return true;
+        }catch (Exception e){
+            Log.e("GestionBDD", "erreur insert "+e.getMessage());
+            return false;
+        }
     }
 
     public Cursor selectSprint(String[]champs, String where, String[] args ,String groupby, String having, String orderby, String limit ){
         SQLiteDatabase db = getWritableDatabase();
-        String[] str = new String[0];
-        //Cursor c = db.rawQuery(req,str)
-        /*Cursor c = db.rawQuery("SELECT COUNT(*) FROM sprint",
-                new String[0]);
-        c.moveToFirst();
-        int nb = c.getInt(0);
-        Log.i("GestionBDD", "nb lignes "+nb);*/
-
-        Cursor c = db.query("sprint", champs, where, args, groupby, having, orderby, limit);
-        return c;
+        return db.query("sprint", champs, where, args, groupby, having, orderby, limit);
     }
 
-    public void delete()
-    {
+    public void delete(){
         SQLiteDatabase db = getWritableDatabase();
         db.delete("sprint",null,null);
     }
