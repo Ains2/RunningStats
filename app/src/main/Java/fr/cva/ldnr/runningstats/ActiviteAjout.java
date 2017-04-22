@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -62,6 +63,8 @@ public class ActiviteAjout extends Menu {
     }
 
     public void saveRun(View v) {
+        boolean complete = true;
+
         DatePicker dp = (DatePicker) findViewById(R.id.date_entry);
         // Problème de compatibilité avec les versions < 23
         TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
@@ -74,6 +77,7 @@ public class ActiviteAjout extends Menu {
 
         //Problème de compatibilité avec les versions < 23
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (tp.getHour() < 10) date += "0";
             date += tp.getHour() + ":";
         } else {
             if (tp.getCurrentHour() < 10) date += "0";
@@ -94,7 +98,13 @@ public class ActiviteAjout extends Menu {
 
         //Récupération des valeurs
         EditText etd = (EditText) findViewById(R.id.time_entry);
-        double temps = Double.parseDouble(etd.getText().toString());
+        double temps = 0;
+        try {
+            temps = Double.parseDouble(etd.getText().toString());
+        }catch (Exception e){
+            complete = false;
+            Log.e("Ajout", e.getMessage());
+        }
 
 
         EditText name_entry = (EditText) findViewById(R.id.name_entry);
@@ -118,13 +128,20 @@ public class ActiviteAjout extends Menu {
         if (radio) {
             compet = 1;
         }
-        GestionBDD gbdd = GestionBDD.getInstance(this);
-        gbdd.insertSprint(dist, temps, date, compet, name, ranking);
-        Button button_save = (Button) findViewById(R.id.save);
-        button_save.setVisibility(LinearLayout.GONE);
-        Button button_new_entry = (Button) findViewById(R.id.new_entry);
-        button_new_entry.setVisibility(LinearLayout.VISIBLE);
-        Toast.makeText(this, getString(R.string.add_ok), Toast.LENGTH_LONG).show();
+        if(complete){
+            GestionBDD gbdd = GestionBDD.getInstance(this);
+            if(gbdd.insertSprint(dist, temps, date, compet, name, ranking)) {
+                Button button_save = (Button) findViewById(R.id.save);
+                button_save.setVisibility(LinearLayout.GONE);
+                Button button_new_entry = (Button) findViewById(R.id.new_entry);
+                button_new_entry.setVisibility(LinearLayout.VISIBLE);
+                Toast.makeText(this, getString(R.string.add_ok), Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this, getString(R.string.add_ko), Toast.LENGTH_LONG).show();
+            }
+        }else{
+            Toast.makeText(this, getString(R.string.add_comp), Toast.LENGTH_LONG).show();
+        }
     }
 
     public void gotoAjout(View view) {
