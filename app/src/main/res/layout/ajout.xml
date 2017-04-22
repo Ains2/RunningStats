@@ -25,22 +25,22 @@
 
         <DatePicker
             android:id="@+id/date_entry"
-            android:layout_width="0sp"
+            android:layout_width="0dip"
             android:layout_height="100sp"
             android:layout_weight="3"
             android:calendarViewShown="false"
             android:datePickerMode="spinner"
             android:spinnersShown="true" />
 
-        <!--  Problème de compatibilité avec les versions < 23
+        <!--  Problème de compatibilité avec les versions < 23-->
 
-         <TimePicker
-               android:id="@+id/hour_entry"
-               android:layout_width="0sp"
-               android:layout_height="100sp"
-               android:layout_weight="2"
-               android:timePickerMode="spinner" />
-   -->
+        <TimePicker
+            android:id="@+id/hour_entry"
+            android:layout_width="0dp"
+            android:layout_height="100sp"
+            android:layout_weight="2"
+            android:timePickerMode="spinner" />
+
     </LinearLayout>
 
 
@@ -62,18 +62,19 @@
             android:layout_weight="1">
 
             <RadioButton
-                android:id="@+id/competition"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="see"
-                android:text="@string/competition" />
-
-            <RadioButton
                 android:id="@+id/training"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="hide"
+                android:checked="true"
+                android:onClick="hideshow"
                 android:text="@string/training" />
+
+            <RadioButton
+                android:id="@+id/competition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="hideshow"
+                android:text="@string/competition" />
         </RadioGroup>
 
         <TextView
@@ -148,8 +149,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-       android:paddingTop="5sp"
-        android:paddingBottom="5sp">
+        android:paddingBottom="5sp"
+        android:paddingTop="5sp">
 
         <TextView
             style="@style/commun"
@@ -164,7 +165,7 @@
             android:layout_width="0sp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center"></Spinner>
+            android:textAlignment="center" />
 
         <TextView
             style="@style/commun"

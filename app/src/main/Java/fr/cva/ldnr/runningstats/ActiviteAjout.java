@@ -1,6 +1,7 @@
 package fr.cva.ldnr.runningstats;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -28,53 +29,42 @@ public class ActiviteAjout extends Menu {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ajout);
-        /* Problème de compatibilité avec les versions < 23
-         TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
+        /* Problème de compatibilité avec les versions < 23*/
+        TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
         tp.setIs24HourView(true);
-           */
 
         //Récupération du Spinner de la liste des distances
         Spinner list_dist = (Spinner) findViewById(R.id.list_dist);
-        //Création de la liste des distances
-        List list = new ArrayList();
-        list.add("60");
-        list.add("100");
-        list.add("200");
-        list.add("400");
-
         // Création de l'adaptater pour afficher le contenu
-        ArrayAdapter adapter = new ArrayAdapter(
-                this,
-                android.R.layout.simple_spinner_item,
-                list
-        );
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dist_sprint, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         list_dist.setAdapter(adapter);
-
         // Concerne les buttons radio et leurs actions :
-        RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
-        radio_competition.setChecked(true);
+        //RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
+        //radio_competition.setChecked(true);
+        hideshow(list_dist);
     }
 
     // Affichage ou non des champs selon le button
-    public void hide(View v) {
-        LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
-        LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
-        layout_name.setVisibility(LinearLayout.GONE);
-        layout_ranking.setVisibility(LinearLayout.GONE);
-    }
-
-    public void see(View v) {
-        LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
-        LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
-        layout_name.setVisibility(LinearLayout.VISIBLE);
-        layout_ranking.setVisibility(LinearLayout.VISIBLE);
+    public void hideshow(View v) {
+        RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
+        if(radio_competition.isChecked()){
+            LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
+            LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
+            layout_name.setVisibility(LinearLayout.VISIBLE);
+            layout_ranking.setVisibility(LinearLayout.VISIBLE);
+        }else{
+            LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
+            LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
+            layout_name.setVisibility(LinearLayout.GONE);
+            layout_ranking.setVisibility(LinearLayout.GONE);
+        }
     }
 
     public void saveRun(View v) {
         DatePicker dp = (DatePicker) findViewById(R.id.date_entry);
         // Problème de compatibilité avec les versions < 23
-        // TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
+        TimePicker tp = (TimePicker) findViewById(R.id.hour_entry);
         String date = dp.getYear() + "/";
         int month = dp.getMonth() + 1;
         if (month < 10) date += "0";
@@ -82,12 +72,20 @@ public class ActiviteAjout extends Menu {
         if (dp.getDayOfMonth() < 10) date += "0";
         date += dp.getDayOfMonth() + " ";
 
-      /*  Problème de compatibilité avec les versions < 23
-
-        if(tp.getHour()<10) date+="0";
-        date+=tp.getHour()+":";
-        if(tp.getMinute()<10) date+="0";
-        date+=tp.getMinute();*/
+        //Problème de compatibilité avec les versions < 23
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            date += tp.getHour() + ":";
+        } else {
+            if (tp.getCurrentHour() < 10) date += "0";
+            date += tp.getCurrentHour() + ":";
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (tp.getMinute() < 10) date += "0";
+            date += tp.getMinute();
+        } else {
+            if (tp.getCurrentMinute() < 10) date += "0";
+            date += tp.getCurrentMinute();
+        }
 
         // Récupération de la valeur de la liste déroulante
         Spinner list_dist = (Spinner) findViewById(R.id.list_dist);
@@ -124,10 +122,9 @@ public class ActiviteAjout extends Menu {
         gbdd.insertSprint(dist, temps, date, compet, name, ranking);
         Button button_save = (Button) findViewById(R.id.save);
         button_save.setVisibility(LinearLayout.GONE);
-        Button button_new_entry = (Button)findViewById(R.id.new_entry);
+        Button button_new_entry = (Button) findViewById(R.id.new_entry);
         button_new_entry.setVisibility(LinearLayout.VISIBLE);
-        Toast.makeText(this,getString(R.string.add_ok),Toast.LENGTH_LONG).show();
-
+        Toast.makeText(this, getString(R.string.add_ok), Toast.LENGTH_LONG).show();
     }
 
     public void gotoAjout(View view) {
