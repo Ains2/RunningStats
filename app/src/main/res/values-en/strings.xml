@@ -57,11 +57,12 @@
     <string name="sure">All datas will be lost.\n Do you really \n want to erase ?</string>
     <string name="yes">Yes, erase everything</string>
     <string name="no">No, keep datas</string>
-    <string name="sup_ok">Datas are succesfully delete...</string>
+    <string name="sup_ok">Datas succesfully deleted…</string>
     <string name="no_data_text">No data found</string>
     <string name="speed_unit">m/s</string>
     <string name="add_ko">Error on the add</string>
     <string name="add_comp">You must enter a time</string>
     <string name="add_neg">Time must be positive</string>
     <string name="add_all">Please complete all infos</string>
+    <string name="graph_moy">Average speed (in %1$s)</string>
 </resources>
