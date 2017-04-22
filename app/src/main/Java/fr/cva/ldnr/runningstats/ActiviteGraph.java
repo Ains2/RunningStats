@@ -13,9 +13,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,22 +66,56 @@ public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
             /* correspond à la requete: "SELECT dates, temps FROM sprint WHERE dist = 100 ORDER BY dates ASC"*/
             Cursor c = gbdd.selectSprint(tab, "dist=?", args, null, null, "dates ASC", null);
 
-            List<Entry> entries = new ArrayList<>();
+            List<Entry> entries_tmps = new ArrayList<>();
+            List<Entry> entries_moy = new ArrayList<>();
             if (c.moveToFirst()) {
                 int i = 0;
                 for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
                     // turn your data into Entry objects
-                    entries.add(new Entry(i, c.getFloat(3)));
+                    entries_tmps.add(new Entry(i, c.getFloat(3)));
+                    entries_moy.add(new Entry(i, c.getInt(2)/c.getFloat(3)));
                     i++;
                 }
                 c.close();
 
-                LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
-                dataSet.setColor(Color.BLUE);
-                dataSet.setValueTextColor(Color.WHITE); // styling, ...
+                LineDataSet ds_tmps = new LineDataSet(entries_tmps, getString(R.string.graph_tmps,getString(R.string.time_unit)));
+                LineDataSet ds_moy = new LineDataSet(entries_moy, getString(R.string.graph_moy, getString(R.string.speed_unit)));
+                ds_tmps.setColor(Color.CYAN);
+                ds_tmps.setCircleColor(Color.CYAN);
+                ds_moy.setColor(Color.MAGENTA);
+                ds_moy.setCircleColor(Color.MAGENTA);
+                ds_tmps.setValueTextColor(Color.WHITE);
+                ds_moy.setValueTextColor(Color.WHITE);
+                List<ILineDataSet> dataSets = new ArrayList<>();
+                dataSets.add(ds_tmps);
+                dataSets.add(ds_moy);
 
-                LineData lineData = new LineData(dataSet);
+                LineData lineData = new LineData(dataSets);
                 chart.setData(lineData);
+
+                //param axes
+                XAxis x = chart.getXAxis();
+                x.setDrawLabels(false);
+                x.setDrawAxisLine(false);
+                x.setAxisMinimum(0);
+                x.setGranularity(1);
+                x.setTextColor(Color.WHITE);
+
+                YAxis yl = chart.getAxisLeft();
+                yl.setDrawLabels(true);
+                yl.setAxisMinimum(0);
+                yl.setGranularity(1);
+                yl.setTextColor(Color.WHITE);
+
+                YAxis yr = chart.getAxisRight();
+                yr.setDrawLabels(false);
+                yr.setDrawAxisLine(false);
+                yr.setDrawGridLines(false);
+
+                //param legende
+                Legend leg = chart.getLegend();
+                leg.setTextColor(Color.WHITE);
+
                 chart.invalidate(); // refresh
             }else{
                 chart.setData(null);

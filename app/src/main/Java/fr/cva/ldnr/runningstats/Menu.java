@@ -23,31 +23,25 @@ public abstract class Menu extends Activity {
             case R.id.menu_accueil:
                 Intent intent5 = new Intent(this, ActiviteAccueil.class);
                 startActivity(intent5);
-                finish();
                 return true;
             case R.id.menu_enregistrer:
                 Intent intent = new Intent(this, ActiviteAjout.class);
                 startActivity(intent);
-                finish();
                 return true;
             case R.id.menu_historique:
                 Intent intent2 = new Intent(this, ActiviteHistorique.class);
                 startActivity(intent2);
-                finish();
                 return true;
             case R.id.menu_statistiques:
                 Intent intent3 = new Intent(this, ActiviteStats.class);
                 startActivity(intent3);
-                finish();
                 return true;
             case R.id.menu_parametres:
                 Intent intent4 = new Intent(this, ActiviteParam.class);
                 startActivity(intent4);
-                finish();
                 return true;
             default:
                 return false;
         }
-
     }
 }

@@ -16,9 +16,6 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
 /**
@@ -40,21 +37,19 @@ public class ActiviteAjout extends Menu {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.dist_sprint, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         list_dist.setAdapter(adapter);
-        // Concerne les buttons radio et leurs actions :
-        //RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
-        //radio_competition.setChecked(true);
+        //Affiche les boutons en fonction du type de course
         hideshow(list_dist);
     }
 
     // Affichage ou non des champs selon le button
     public void hideshow(View v) {
         RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
-        if(radio_competition.isChecked()){
+        if (radio_competition.isChecked()) {
             LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
             LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
             layout_name.setVisibility(LinearLayout.VISIBLE);
             layout_ranking.setVisibility(LinearLayout.VISIBLE);
-        }else{
+        } else {
             LinearLayout layout_name = (LinearLayout) findViewById(R.id.name);
             LinearLayout layout_ranking = (LinearLayout) findViewById(R.id.ranking);
             layout_name.setVisibility(LinearLayout.GONE);
@@ -101,11 +96,14 @@ public class ActiviteAjout extends Menu {
         double temps = 0;
         try {
             temps = Double.parseDouble(etd.getText().toString());
-        }catch (Exception e){
+            if(temps<0){
+                complete = false;
+                Toast.makeText(this, getString(R.string.add_neg), Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
             complete = false;
             Log.e("Ajout", e.getMessage());
         }
-
 
         EditText name_entry = (EditText) findViewById(R.id.name_entry);
         String name = name_entry.getText().toString();
@@ -125,22 +123,29 @@ public class ActiviteAjout extends Menu {
         int compet = 0;
         RadioButton radio_competition = (RadioButton) findViewById(R.id.competition);
         Boolean radio = radio_competition.isChecked();
+        // Si compétition
         if (radio) {
             compet = 1;
+            // Vérification des champs classement et nom
+            if (ranking == 0 | name == "")
+                complete = false;
         }
-        if(complete){
+        if (complete) {
             GestionBDD gbdd = GestionBDD.getInstance(this);
-            if(gbdd.insertSprint(dist, temps, date, compet, name, ranking)) {
+            if (gbdd.insertSprint(dist, temps, date, compet, name, ranking)) {
                 Button button_save = (Button) findViewById(R.id.save);
                 button_save.setVisibility(LinearLayout.GONE);
                 Button button_new_entry = (Button) findViewById(R.id.new_entry);
                 button_new_entry.setVisibility(LinearLayout.VISIBLE);
                 Toast.makeText(this, getString(R.string.add_ok), Toast.LENGTH_LONG).show();
-            }else{
+            } else {
                 Toast.makeText(this, getString(R.string.add_ko), Toast.LENGTH_LONG).show();
             }
-        }else{
-            Toast.makeText(this, getString(R.string.add_comp), Toast.LENGTH_LONG).show();
+        } else {
+            if (compet == 0)
+                Toast.makeText(this, getString(R.string.add_comp), Toast.LENGTH_LONG).show();
+            else
+                Toast.makeText(this, getString(R.string.add_all), Toast.LENGTH_LONG).show();
         }
     }
 

@@ -1,5 +1,15 @@
 <resources>
+    <!--Commun-->
     <string name="app_name">Running Stats</string>
+    <string-array name="dist_sprint">
+        <item>60</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+    </string-array>
+    <string name="speed_unit">m/s</string>
+    <string name="length_unit">m</string>
+    <string name="time_unit">s</string>
     <!-- Labels -->
     <string name="label_new_entry">Ajouter une entrée</string>
     <string name="label_histo">Historique de vos performances</string>
@@ -27,18 +37,23 @@
     <string name="ranking_entry">Classement : </string>
     <string name="save">Enregister</string>
     <string name="length_entry">Distance :</string>
-    <string name="length_unit">m</string>
-    <string name="time_unit">s</string>
     <string name="type">Type : </string>
     <string name="competition">Compétition</string>
     <string name="training">Entrainement</string>
     <string name="button_add_entry">Ajouter une autre entrée</string>
     <string name="add_ok">Entrée ajoutée avec succès</string>
+    <string name="add_ko">Erreur lors de l\'ajout</string>
+    <string name="add_comp">Entrez un temps</string>
+    <string name="add_all">Vous devez renseigner tous les champs</string>
+    <string name="add_neg">Le temps ne peut être négatif</string>
     <!-- Activité Historique -->
     <string name="historique">Historique</string>
     <string name="gographique">Graphique</string>
     <!-- Activité Graphique -->
     <string name="graph">Graphique</string>
+    <string name="graph_tmps">Durée de sprint (en %1$s)</string>
+    <string name="graph_moy">Vitesse moyenne (en %1$s)</string>
+    <string name="no_data_text">Aucune valeur trouvée</string>
     <!-- Activité Stats -->
     <string name="stats">Statistiques</string>
     <string name="distance_total">Distance totale : </string>
@@ -58,17 +73,6 @@
     <string name="sure">La suppression des données\n est définitive.\n Voulez vous vraiment\n tout supprimer ?</string>
     <string name="yes">Oui, tout supprimer</string>
     <string name="no">Non, garder mes données</string>
-    <string name="sup_ok">Suppression effecutée avec succès...</string>
-    <string name="no_data_text">Aucune valeur trouvée</string>
-    <string name="speed_unit">m/s</string>
-    <string name="add_ko">Erreur lors de l\'ajout</string>
-    <string name="add_comp">Entrez un temps</string>
-
-    <string-array name="dist_sprint">
-        <item>60</item>
-        <item>100</item>
-        <item>200</item>
-        <item>400</item>
-    </string-array>
+    <string name="sup_ok">Les données ont bien été supprimées…</string>
 
 </resources>

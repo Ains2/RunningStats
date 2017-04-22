@@ -32,22 +32,26 @@
         <activity
             android:name=".ActiviteParam"
             android:label="@string/label_settings"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
 
         <activity
             android:name=".ActiviteStats"
             android:label="@string/label_stats"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
 
         <activity
             android:name=".ActiviteGraph"
             android:label="@string/graph"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
 
         <activity
             android:name=".ActiviteHistorique"
             android:label="@string/label_histo"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
 
     </application>
 
