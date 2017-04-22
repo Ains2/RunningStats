@@ -55,6 +55,7 @@
             style="@style/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="parametres_export"
             android:text="@string/export" />
 
         <Button
