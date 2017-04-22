@@ -64,7 +64,7 @@
     <string name="add_ko">Erreur lors de l\'ajout</string>
     <string name="add_comp">Entrez un temps</string>
     <string name="add_neg">Le temps ne peut être négatif</string>
-
+    <string name="add_all">Vous devez renseigner tous les champs</string>
     <string-array name="dist_sprint">
         <item>60</item>
         <item>100</item>

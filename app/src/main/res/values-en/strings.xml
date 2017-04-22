@@ -60,4 +60,8 @@
     <string name="sup_ok">Datas are succesfully delete...</string>
     <string name="no_data_text">No data found</string>
     <string name="speed_unit">m/s</string>
+    <string name="add_ko">Error on the add</string>
+    <string name="add_comp">You must enter a time</string>
+    <string name="add_neg">Time must be positive</string>
+    <string name="add_all">Please complete all infos</string>
 </resources>

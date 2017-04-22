@@ -48,6 +48,5 @@ public abstract class Menu extends Activity {
             default:
                 return false;
         }
-
     }
 }

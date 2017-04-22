@@ -14,7 +14,9 @@
     <Spinner
         android:id="@+id/selectdist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8sp"
+        android:textAlignment="center" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
