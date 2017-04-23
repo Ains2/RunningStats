@@ -17,7 +17,7 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
         super.onStart();
         GestionBDD gbdd = GestionBDD.getInstance(this);
         try {
-            String[] tab = {"_id", "dates", "dist", "temps", "compet", "nom", "classement"};
+            String[] tab = {"_id", "dates", "dist", "temps", "nom", "classement"};
             Cursor c = gbdd.selectSprint(tab, null, new String[0], null, null, "dates DESC", "1");
             // Placement sur le résultat
             c.moveToFirst();
@@ -25,9 +25,8 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
             String date = c.getString(1);
             int dist = c.getInt(2);
             Float temps = c.getFloat(3);
-            int compet = c.getInt(4);
-            String nom = c.getString(5);
-            int classement = c.getInt(6);
+            String nom = c.getString(4);
+            int classement = c.getInt(5);
             // Configuration pour affichage
             String txt = dist + " m / " + temps + "s";
             TextView last_run = (TextView) findViewById(R.id.last_run);
