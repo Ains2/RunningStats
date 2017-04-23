@@ -76,5 +76,5 @@
     <string name="no">Non, garder mes données</string>
     <string name="sup_ok">Les données ont bien été supprimées…</string>
     <string name="export_fail">Hélas pour vous, votre export a échoué</string>
-
+    <string name="export_success">Export réussi</string>
 </resources>
