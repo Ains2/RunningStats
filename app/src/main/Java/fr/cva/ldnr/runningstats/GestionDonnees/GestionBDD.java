@@ -14,7 +14,6 @@ public class GestionBDD extends SQLiteOpenHelper {
     private static GestionBDD instance;
 
     private GestionBDD(Context context) {super(context, "data", null, 1);}
-    //private GestionBDD(Context context) {super(context, context.getClass().getName(), null, 1);}
 
     public static GestionBDD getInstance(Context context){
         if (instance==null){
