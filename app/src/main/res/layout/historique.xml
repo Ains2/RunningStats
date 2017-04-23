@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     style="@style/commun"
     >
-
         <TextView
             style="@style/commun.titre"
             android:layout_width="match_parent"
@@ -26,7 +25,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Distance"
+                    android:text="Dist"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -34,22 +33,34 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Temps"
+                    android:text="Tps"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Compet"
+                    android:gravity="center"
+                    android:layout_weight="2"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Class"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
         </LinearLayout>
-
-
                 <ListView
                     android:id="@+id/lv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
                 </ListView>
-
                 <Button
                     android:id="@+id/gotoGraphique"
                     style="@style/button"
@@ -57,5 +68,4 @@
                     android:layout_height="wrap_content"
                     android:text="@string/gographique"
                     android:onClick="gotoGraphique"/>
-
         </LinearLayout>
