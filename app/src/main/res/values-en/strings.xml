@@ -1,5 +1,9 @@
 <resources>
+    <!--Commun-->
     <string name="app_name">Running Stats</string>
+    <string name="speed_unit">m/s</string>
+    <string name="length_unit">m</string>
+    <string name="time_unit">s</string>
     <!-- Labels -->
     <string name="label_new_entry">Add a new entry</string>
     <string name="label_histo">History of your performances</string>
@@ -27,13 +31,15 @@
     <string name="ranking_entry">Ranking : </string>
     <string name="save">Save</string>
     <string name="length_entry">Distance :</string>
-    <string name="length_unit">m</string>
-    <string name="time_unit">s</string>
     <string name="type">Type : </string>
     <string name="competition">Competition</string>
     <string name="training">Training</string>
     <string name="button_add_entry">Add another entry</string>
     <string name="add_ok">New entry add successfully</string>
+    <string name="add_ko">Error on the add</string>
+    <string name="add_comp">You must enter a time</string>
+    <string name="add_neg">Time must be positive</string>
+    <string name="add_all">Please complete all infos</string>
     <!-- Activité Historique -->
     <string name="historique">History</string>
     <string name="distance">Dist</string>
@@ -41,33 +47,26 @@
     <string name="tps">Time</string>
     <string name="date">Date</string>
     <string name="classement">Rank</string>
-
     <!-- Activité Graphique -->
     <string name="graph">Graph</string>
+    <string name="graph_moy">Average speed (in %1$s)</string>
+    <string name="graph_tmps">Sprint time (in %1$s)</string>
+    <string name="no_data_text">No data found</string>
     <!-- Activité Stats -->
     <string name="stats">Stats</string>
     <string name="distance_total">Total distance : </string>
     <string name="time_total">Total time : </string>
     <string name="avg_speed">Average speed : </string>
     <string name="best_time">Best time : </string>
-    <string name="the">The : </string>
+    <string name="date_pref">On : </string>
     <string name="worst_time">Worst time : </string>
-    <string name="graph_moy">Average speed (in %1$s)</string>
-    <string name="graph_tmps">Sprint time (in %1$s)</string>
     <!-- Activité Paramètres -->
     <string name="settings">Settings</string>
     <string name="export">Database export</string>
     <string name="erase">Erase database</string>
     <string name="sure_title">Warning !</string>
-    <string name="sure">All datas will be lost.\n Do you really \n want to erase ?</string>
+    <string name="sure">All data will be lost.\n Do you really \n want to erase ?</string>
     <string name="yes">Yes, erase everything</string>
-    <string name="no">No, keep datas</string>
-    <string name="sup_ok">Datas successfully deleted…</string>
-    <string name="no_data_text">No data found</string>
-    <string name="speed_unit">m/s</string>
-    <string name="add_ko">Error on the add</string>
-    <string name="add_comp">You must enter a time</string>
-    <string name="add_neg">Time must be positive</string>
-    <string name="add_all">Please complete all infos</string>
-    <string name="gographique">Show graph</string>
+    <string name="no">No, keep data</string>
+    <string name="sup_ok">Data successfully deleted…</string>
 </resources>

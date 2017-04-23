@@ -64,7 +64,7 @@
     <string name="time_total">Durée totale : </string>
     <string name="avg_speed">Vitesse moyenne : </string>
     <string name="best_time">Meilleur temps : </string>
-    <string name="the">Le : </string>
+    <string name="date_pref">Le : </string>
     <string name="worst_time">Moins bon temps : </string>
     <!-- Activité Paramètres -->
     <string name="settings">Paramètres</string>
