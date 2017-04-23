@@ -71,7 +71,7 @@ public class ActiviteParam extends fr.cva.ldnr.runningstats.Menu {
                 c.moveToFirst();
 
                 File dir = Environment.getExternalStoragePublicDirectory(
-                        Environment.DIRECTORY_DOWNLOADS);
+                        Environment.DIRECTORY_DOCUMENTS);
 
                 dir.mkdirs();
 

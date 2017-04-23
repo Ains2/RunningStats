@@ -17,38 +17,7 @@
             style="@style/commun.titre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/display" />
-
-        <LinearLayout
-            style="@style/commun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20sp">
-
-                <TextView
-                    style="@style/commun"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/theme_choise" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/light" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:text="@string/dark" />
-            </RadioGroup>
-        </LinearLayout>
+            android:text="@string/settings" />
 
         <Button
             android:id="@+id/parametres_export"
