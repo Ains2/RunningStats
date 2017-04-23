@@ -130,5 +130,6 @@ public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
     public void seehisto(View view) {
         Intent intent = new Intent(this, ActiviteHistorique.class);
         startActivity(intent);
+        finish();
     }
 }

@@ -152,6 +152,7 @@ public class ActiviteAjout extends Menu {
     public void gotoAjout(View view) {
         Intent intent = new Intent(this, ActiviteAjout.class);
         startActivity(intent);
+        finish();
     }
 
 }

@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/**
- * Created by Ains on 20/04/2017.
+/*
+  Created by Ains on 20/04/2017.
  */
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 

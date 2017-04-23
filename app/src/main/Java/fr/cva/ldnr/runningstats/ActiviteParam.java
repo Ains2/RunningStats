@@ -1,22 +1,12 @@
 package fr.cva.ldnr.runningstats;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
-import android.text.Layout;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -51,6 +41,7 @@ public class ActiviteParam extends fr.cva.ldnr.runningstats.Menu {
             Toast.makeText(this,getString(R.string.sup_ok),Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, ActiviteAccueil.class);
             startActivity(intent);
+            finish();
         }
         catch (Exception ex){
         }
@@ -59,6 +50,7 @@ public class ActiviteParam extends fr.cva.ldnr.runningstats.Menu {
     public void no (View view) {
         Intent intent = new Intent(this, ActiviteParam.class);
         startActivity(intent);
+        finish();
     }
 
     public void parametres_export(View view) {
