@@ -52,10 +52,15 @@ public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
             historyLine.put("dist", cursor.getInt(2));
             historyLine.put("temps", cursor.getFloat(3));
             historyLine.put("nom", cursor.getString(4));
-            historyLine.put("classement", cursor.getInt(5));
+
+            //pour ne rien afficher pour les entrainements
+            if (cursor.getInt(5) == 0)
+                historyLine.put("classement", "");
+            else
+                historyLine.put("classement", cursor.getInt(5));
             history.add(historyLine);
-        }
-        return history;
+            }
+             return history;
     }
 
     public void gotoGraphique(View view) {

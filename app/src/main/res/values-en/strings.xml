@@ -36,6 +36,12 @@
     <string name="add_ok">New entry add successfully</string>
     <!-- Activité Historique -->
     <string name="historique">History</string>
+    <string name="distance">Dist</string>
+    <string name="compet">Compet</string>
+    <string name="tps">Time</string>
+    <string name="date">Date</string>
+    <string name="classement">Rank</string>
+
     <!-- Activité Graphique -->
     <string name="graph">Graph</string>
     <!-- Activité Stats -->

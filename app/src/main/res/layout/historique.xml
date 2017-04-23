@@ -18,14 +18,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:layout_weight="2"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dist"
+                    android:text="@string/distance"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -33,7 +33,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tps"
+                    android:text="@string/tps"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -41,7 +41,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Compet"
+                    android:text="@string/compet"
                     android:gravity="center"
                     android:layout_weight="2"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Class"
+                    android:text="@string/classement"
                     android:gravity="center"
                     android:layout_weight="1"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -58,7 +58,7 @@
                 <ListView
                     android:id="@+id/lv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1">
                 </ListView>
                 <Button
@@ -66,6 +66,6 @@
                     style="@style/button"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/gographique"
+                    android:text="@string/graph"
                     android:onClick="gotoGraphique"/>
         </LinearLayout>
