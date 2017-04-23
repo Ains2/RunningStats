@@ -69,4 +69,5 @@
     <string name="yes">Yes, erase everything</string>
     <string name="no">No, keep data</string>
     <string name="sup_ok">Data successfully deleted…</string>
+    <string name="export_fail">Export fail</string>
 </resources>

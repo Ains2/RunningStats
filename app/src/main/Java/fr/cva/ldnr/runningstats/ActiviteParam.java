@@ -49,9 +49,12 @@ public class ActiviteParam extends fr.cva.ldnr.runningstats.Menu {
         finish();
     }
 
+
+    // Attention !! Fonction non opérationnelle. Message d'erreur lié aux permissions
+    //support/storage/emulated/0/Documents/export.csv: open failed: EACCES (Permission denied
+
     public void parametres_export(View view) {
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-
             try {
                 GestionBDD gbdd = GestionBDD.getInstance(this);
                 String[] tab = {"*"};
@@ -75,6 +78,10 @@ public class ActiviteParam extends fr.cva.ldnr.runningstats.Menu {
 
             } catch (Exception ex) {
                 Log.e("param", "pb support"+ex.getMessage());
+                Toast.makeText(this,getString(R.string.export_fail),Toast.LENGTH_LONG).show();
+
+
+
             }
         }
     }
