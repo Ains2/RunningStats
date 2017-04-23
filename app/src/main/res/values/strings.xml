@@ -48,7 +48,11 @@
     <string name="add_neg">Le temps ne peut être négatif</string>
     <!-- Activité Historique -->
     <string name="historique">Historique</string>
-    <string name="gographique">Graphique</string>
+    <string name="distance">Dist</string>
+    <string name="compet">Compet</string>
+    <string name="tps">Tps</string>
+    <string name="date">Date</string>
+    <string name="classement">Class</string>
     <!-- Activité Graphique -->
     <string name="graph">Graphique</string>
     <string name="graph_tmps">Durée de sprint (en %1$s)</string>
