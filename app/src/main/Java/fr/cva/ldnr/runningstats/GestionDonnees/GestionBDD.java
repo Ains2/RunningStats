@@ -6,10 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by Nanwee on 19/04/2017.
- */
-
 public class GestionBDD extends SQLiteOpenHelper {
     private static GestionBDD instance;
 

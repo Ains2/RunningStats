@@ -26,10 +26,6 @@ import java.util.List;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/**
- * Created by Nanwee on 19/04/2017.
- */
-
 public class ActiviteGraph extends fr.cva.ldnr.runningstats.Menu {
 
     @Override

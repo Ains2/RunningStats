@@ -14,10 +14,6 @@ import java.util.List;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/**
- * Created by Nanwee on 19/04/2017.
- */
-
 public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
 
     @Override
@@ -38,7 +34,7 @@ public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
         // on extrait les données du curseur pour qu'elles soient utilisable par l'adapter
         final List history = cursorToHistory(cur_histo);
         ListAdapter adapter = new SimpleAdapter(this, history, R.layout.row_item, from, to);
-        // On rempli l'objet ListView
+        // On remplit l'objet ListView
         ListView lv = (ListView) findViewById(R.id.lv);
         lv.setAdapter(adapter);
     }

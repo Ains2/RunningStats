@@ -18,10 +18,6 @@ import android.widget.Toast;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/**
- * Created by Nanwee on 19/04/2017.
- */
-
 public class ActiviteAjout extends Menu {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -127,7 +123,7 @@ public class ActiviteAjout extends Menu {
         if (radio) {
             compet = 1;
             // Vérification des champs classement et nom
-            if (ranking == 0 | name == "")
+            if (ranking == 0 || name == "")
                 complete = false;
         }
         if (complete) {

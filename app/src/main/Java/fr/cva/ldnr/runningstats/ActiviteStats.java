@@ -12,10 +12,6 @@ import android.widget.TextView;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/**
- * Created by Nanwee on 19/04/2017.
- */
-
 public class ActiviteStats extends Menu {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
