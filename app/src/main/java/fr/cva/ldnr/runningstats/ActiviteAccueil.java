@@ -10,17 +10,11 @@ import android.widget.TextView;
 
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
-/*
-  Created by Ains on 20/04/2017.
- */
-import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
-
 public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.accueil);
+    protected void onStart() {
+        super.onStart();
         GestionBDD gbdd = GestionBDD.getInstance(this);
         try {
             String[] tab = {"_id", "dates", "dist", "temps", "compet", "nom", "classement"};
@@ -30,7 +24,7 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
             // Récup des données
             String date = c.getString(1);
             int dist = c.getInt(2);
-            int temps = c.getInt(3);
+            Float temps = c.getFloat(3);
             int compet = c.getInt(4);
             String nom = c.getString(5);
             int classement = c.getInt(6);
@@ -53,6 +47,12 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
             TextView date_last_run = (TextView) findViewById(R.id.date);
             date_last_run.setText("");
         }
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.accueil);
     }
 
     public void gotoAjout(View view) {

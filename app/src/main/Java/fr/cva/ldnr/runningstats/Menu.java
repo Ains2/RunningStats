@@ -6,10 +6,6 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-/**
- * Created by Vince on 20/04/2017.
- */
-
 public abstract class Menu extends Activity {
 
     @Override
@@ -23,6 +19,9 @@ public abstract class Menu extends Activity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.menu_accueil:
+                if(this.getLocalClassName().equals("ActiviteAccueil")){
+                    return true;
+                }
                 finish();
                 return true;
             case R.id.menu_enregistrer:
