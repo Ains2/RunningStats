@@ -1,6 +1,12 @@
 <resources>
     <!--Commun-->
     <string name="app_name">Running Stats</string>
+    <string-array name="dist_sprint">
+        <item>60</item>
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+    </string-array>
     <string name="speed_unit">m/s</string>
     <string name="length_unit">m</string>
     <string name="time_unit">s</string>
