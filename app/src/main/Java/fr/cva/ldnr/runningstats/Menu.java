@@ -23,8 +23,8 @@ public abstract class Menu extends Activity {
         Intent intent;
         switch (item.getItemId()) {
             case R.id.menu_accueil:
-                intent = new Intent(this, ActiviteAccueil.class);
-                break;
+                finish();
+                return true;
             case R.id.menu_enregistrer:
                 intent = new Intent(this, ActiviteAjout.class);
                 break;
@@ -42,7 +42,7 @@ public abstract class Menu extends Activity {
         }
         Log.i("Menu",this.getLocalClassName());
         startActivity(intent);
-        if(!this.getLocalClassName().equals("ActiviteAccueil")||(item.getItemId()==R.id.menu_accueil)){
+        if(!this.getLocalClassName().equals("ActiviteAccueil")){
             finish();
         }
         return true;
