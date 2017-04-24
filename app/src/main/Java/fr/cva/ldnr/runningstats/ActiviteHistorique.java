@@ -33,13 +33,14 @@ public class ActiviteHistorique extends fr.cva.ldnr.runningstats.Menu {
 
         // on extrait les données du curseur pour qu'elles soient utilisable par l'adapter
         final List history = cursorToHistory(cur_histo);
+        cur_histo.close();
         ListAdapter adapter = new SimpleAdapter(this, history, R.layout.row_item, from, to);
         // On remplit l'objet ListView
         ListView lv = (ListView) findViewById(R.id.lv);
         lv.setAdapter(adapter);
     }
 
-    //Transformation du Curseur en liste
+    //Transformation du Curseur en liste associative
     private List cursorToHistory(Cursor cursor) {
         List history = new ArrayList<>();
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext()) {

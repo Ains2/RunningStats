@@ -16,6 +16,8 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 import fr.cva.ldnr.runningstats.GestionDonnees.GestionBDD;
 
 public class ActiviteAjout extends Menu {
@@ -123,7 +125,7 @@ public class ActiviteAjout extends Menu {
         if (radio) {
             compet = 1;
             // Vérification des champs classement et nom
-            if (ranking == 0 || name == "")
+            if (ranking == 0 || Objects.equals(name, ""))
                 complete = false;
         }
         if (complete) {

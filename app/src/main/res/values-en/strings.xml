@@ -16,6 +16,7 @@
     <string name="label_stats">Detailed statistics</string>
     <string name="label_settings">RunningStats settings</string>
     <!-- Menu -->
+    <string name="menu_option">Menu</string>
     <string name="menu_home">Home</string>
     <string name="menu_new_entry">Add entry</string>
     <string name="menu_histo">History</string>

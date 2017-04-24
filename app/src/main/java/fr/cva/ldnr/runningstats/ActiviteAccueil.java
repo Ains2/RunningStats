@@ -27,6 +27,7 @@ public class ActiviteAccueil extends fr.cva.ldnr.runningstats.Menu {
             Float temps = c.getFloat(3);
             String nom = c.getString(4);
             int classement = c.getInt(5);
+            c.close();
             // Configuration pour affichage
             String txt = dist + " m / " + temps + "s";
             TextView last_run = (TextView) findViewById(R.id.last_run);
